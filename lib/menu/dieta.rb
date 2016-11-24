@@ -16,7 +16,7 @@ module Dieta
 
     attr_reader :titulo, :porcentaje, :vct, :proteinas, :grasas, :hidratos, :platos, :porcion, :ingesta
 
-    def salida()
+    def to_s()
       out = "#{titulo} (#{porcentaje}%)\n"
       i=0
       while i<@platos.size
