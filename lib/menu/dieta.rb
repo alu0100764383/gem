@@ -2,6 +2,8 @@ module Dieta
 
   class Menu
     
+    include Comparable
+    
     def initialize(titulo, platos, porcentaje, porcion, ingesta, vct, proteinas, grasas, hidratos)
       @titulo = titulo #Nombre del plato
       @porcentaje = porcentaje #Porcentaje que representa el menu en la ingesta diaria
@@ -26,6 +28,11 @@ module Dieta
       out = out + "V.C.T. | #{vct} | #{proteinas}% - #{grasas}% - #{hidratos}%\n"
       return out
     end
+    
+    def <=>(other)                                              #funcion necesaria para comparar (COMPARABLE)
+        self.platos.size() <=> other.platos.size()
+    end
+    
   end
 end
 
