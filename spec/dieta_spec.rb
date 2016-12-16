@@ -23,7 +23,6 @@ describe Dieta do
     @menu2 = Dieta::Menu.new("MEDITERRANEA",platos2,30,porciones2,gramos2,500,20,30,15)
     @menu3 = Dieta::Menu.new("MEDITERRANEA",platos3,30,porciones3,gramos3,500,20,30,15)
      
-    puts "\n" + @dieta.to_s + "\n"
     puts "\n" + @Dieta_Por_Alimentos.to_s + "\n"
     puts "\n" + @Dieta_Por_Edad.to_s + "\n"
     
@@ -114,5 +113,5 @@ describe "Comprobando requisitos de la comparacion" do
   
 end
 
-
 end
+

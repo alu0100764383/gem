@@ -22,7 +22,7 @@ module Dieta
       out = "#{titulo} (#{porcentaje}%)\n"
       i=0
       while i<@platos.size
-        out = out + "- #{platos[i]}, #{porcion[i]}, #{ingesta[i]}\n"
+        out = out + "- #{@platos[i]}, #{@porcion[i]}, #{@ingesta[i]}\n"
         i = i+1
       end
       out = out + "V.C.T. | #{vct} | #{proteinas}% - #{grasas}% - #{hidratos}%\n"
@@ -32,7 +32,8 @@ module Dieta
     def <=>(other)                                              #funcion necesaria para comparar (COMPARABLE)
         self.platos.size() <=> other.platos.size()
     end
-    
+  
   end
+
 end
 

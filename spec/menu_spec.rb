@@ -42,13 +42,14 @@ describe MenuDietetico do
     
     @menuedades = GruposEdades.new("Edades",platos,20,porciones,gramos,333,30,20,50,"20 a 30 años")
     
-    puts "\n" + @menu1.to_s + "\n"
-    puts "\n" + @menu2.to_s + "\n"
-    puts "\n" + @menu3.to_s + "\n"
-    puts "\n" + @menu4.to_s + "\n"
-    puts "\n" + @menu5.to_s + "\n"
-    puts "\n" + @menualimentos.to_s + "\n"
-    puts "\n" + @menuedades.to_s + "\n"
+    
+    #puts "\n" + @menu1.to_s + "\n"
+    #puts "\n" + @menu2.to_s + "\n"
+    #puts "\n" + @menu3.to_s + "\n"
+    #puts "\n" + @menu4.to_s + "\n"
+    #puts "\n" + @menu5.to_s + "\n"
+    #puts "\n" + @menualimentos.to_s + "\n"
+    #puts "\n" + @menuedades.to_s + "\n"
     
     @lista = MenuDietetico::Lista.new
     
@@ -99,6 +100,25 @@ describe MenuDietetico do
       expect(@lista.pop_inicio).to eq(@menu5)
     end
     
+  end
+  
+  context "Requisios de el modulo Enumerable" do
+    
+    it "Puede revertir los menus de la lista" do
+      @lista.push_final(@menu1)
+      @lista.push_final(@menu2)
+      @lista2 = @lista.reverse
+      expect(@lista.head.value).to eq(@lista2.tail.value)
+      
+    end
+    
+    it "Puede encontrar un elemento" do
+      
+      expect(@lista.find { |menu| menu==@menu1 }).to eq(@menu1)
+      
+    end
+    
+  
   end
 
 end
